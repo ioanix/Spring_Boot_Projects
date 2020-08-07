@@ -22,7 +22,7 @@ public class GuitarController {
         return guitarService.getAllGuitars();
     }
 
-    @GetMapping("/guitars/{serialNumber}")
+    @GetMapping("/guitar/{serialNumber}")
     @ResponseBody
     public Guitar getGuitarById(@PathVariable("serialNumber") String serialNumber) {
 
