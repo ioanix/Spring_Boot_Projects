@@ -37,11 +37,14 @@ public class GuitarController {
         return guitar;
     }
 
+    @DeleteMapping("/delete/{serialNumber}")
+    @ResponseBody
+    public String deleteGuitarById(@PathVariable("serialNumber") String serialNumber) {
+
+        guitarService.deleteGuitarById(serialNumber);
+
+        return "Guitar deleted";
+    }
 
 
-//    @GetMapping("/")
-//    public String shoeHomePage() {
-//
-//        return "index";
-//    }
 }
