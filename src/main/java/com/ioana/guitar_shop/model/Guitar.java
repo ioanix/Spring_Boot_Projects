@@ -31,8 +31,11 @@ public class Guitar {
     @Column(name="price", nullable = false)
     private double price;
 
+    @Column(name="image")
+    private String imgURL;
 
-    public Guitar(String serialNumber, String builder, String model, String type, String backWood, String topWood, double price) {
+
+    public Guitar(String serialNumber, String builder, String model, String type, String backWood, String topWood, double price, String imgURL) {
         this.serialNumber = serialNumber;
         this.builder = builder;
         this.model = model;
@@ -40,6 +43,7 @@ public class Guitar {
         this.backWood = backWood;
         this.topWood = topWood;
         this.price = price;
+        this.imgURL = imgURL;
     }
 
     public Guitar() {
@@ -99,5 +103,13 @@ public class Guitar {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 }

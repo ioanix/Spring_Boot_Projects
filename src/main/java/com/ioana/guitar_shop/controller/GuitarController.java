@@ -46,5 +46,13 @@ public class GuitarController {
         return "Guitar deleted";
     }
 
+//    @PutMapping("/update_guitar")
+//    public Guitar saveOrUpdateGuitar(@RequestBody Guitar guitar) {
+//
+//        guitarService.addGuitar(guitar);
+//
+//        return guitar;
+//    }
+
 
 }
