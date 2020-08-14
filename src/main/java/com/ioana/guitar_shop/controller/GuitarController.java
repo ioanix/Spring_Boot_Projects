@@ -9,19 +9,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@CrossOrigin(origins = "*")
 public class GuitarController {
 
     @Autowired
     GuitarService guitarService;
 
-    @CrossOrigin(origins = "*")
+
     @GetMapping("/guitars")
     @ResponseBody
     public List<Guitar> getGuitars() {
 
         return guitarService.getAllGuitars();
     }
-    @CrossOrigin(origins = "*")
+    
     @GetMapping("/guitar/{serialNumber}")
     @ResponseBody
     public Guitar getGuitarById(@PathVariable("serialNumber") String serialNumber) {
