@@ -29,7 +29,7 @@ public class GuitarServiceImpl implements GuitarService {
     @Override
     public Guitar getGuitarById(String serialNumber) {
 
-        return guitarRepo.findById(serialNumber).orElse(null);
+        return guitarRepo.findById(serialNumber).orElseThrow(() -> new IllegalArgumentException("Invalid serial number" + serialNumber));
     }
 
     @Override
