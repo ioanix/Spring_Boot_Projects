@@ -3,7 +3,9 @@ package com.ioana.guitar_shop.service;
 import com.ioana.guitar_shop.model.Guitar;
 import com.ioana.guitar_shop.repository.GuitarRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class GuitarServiceImpl implements GuitarService {
     @Override
     public Guitar getGuitarById(String serialNumber) {
 
-        return guitarRepo.findById(serialNumber).orElseThrow(() -> new IllegalArgumentException("Invalid serial number" + serialNumber));
+        return guitarRepo.findById(serialNumber).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "product does not exist"));
     }
 
     @Override
