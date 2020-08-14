@@ -14,14 +14,14 @@ public class GuitarController {
     @Autowired
     GuitarService guitarService;
 
-    @CrossOrigin(origins = "http://*")
+    @CrossOrigin(origins = "*")
     @GetMapping("/guitars")
     @ResponseBody
     public List<Guitar> getGuitars() {
 
         return guitarService.getAllGuitars();
     }
-    @CrossOrigin(origins = "http://*")
+    @CrossOrigin(origins = "*")
     @GetMapping("/guitar/{serialNumber}")
     @ResponseBody
     public Guitar getGuitarById(@PathVariable("serialNumber") String serialNumber) {
