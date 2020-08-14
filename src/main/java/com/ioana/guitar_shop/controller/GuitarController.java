@@ -3,11 +3,9 @@ package com.ioana.guitar_shop.controller;
 import com.ioana.guitar_shop.model.Guitar;
 import com.ioana.guitar_shop.service.GuitarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -32,13 +30,13 @@ public class GuitarController {
         return guitarService.getGuitarById(serialNumber);
     }
 
-    @GetMapping("/error")
-    public ResponseEntity getError(HttpServletResponse res) {
-
-        res.setStatus(404);
-
-        return null;
-    }
+//    @GetMapping("/error")
+//    public ResponseEntity getError(HttpServletResponse res) {
+//
+//        res.setStatus(404);
+//
+//        return null;
+//    }
 
 
     @PostMapping("/guitar")
