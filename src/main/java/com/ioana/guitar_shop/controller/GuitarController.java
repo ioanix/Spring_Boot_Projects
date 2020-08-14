@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")  // to allow access from any address to the api
 public class GuitarController {
 
     @Autowired
@@ -22,7 +22,7 @@ public class GuitarController {
 
         return guitarService.getAllGuitars();
     }
-    
+
     @GetMapping("/guitar/{serialNumber}")
     @ResponseBody
     public Guitar getGuitarById(@PathVariable("serialNumber") String serialNumber) {
