@@ -14,14 +14,14 @@ public class GuitarController {
     @Autowired
     GuitarService guitarService;
 
-
+    @CrossOrigin(origins = "https://new-guitar-shop.herokuapp.com/guitars")
     @GetMapping("/guitars")
     @ResponseBody
     public List<Guitar> getGuitars() {
 
         return guitarService.getAllGuitars();
     }
-
+    @CrossOrigin(origins = "https://new-guitar-shop.herokuapp.com/guitar/{serialNumber}")
     @GetMapping("/guitar/{serialNumber}")
     @ResponseBody
     public Guitar getGuitarById(@PathVariable("serialNumber") String serialNumber) {
