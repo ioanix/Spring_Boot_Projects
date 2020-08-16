@@ -3,8 +3,10 @@ package com.ioana.guitar_shop.controller;
 import com.ioana.guitar_shop.model.Guitar;
 import com.ioana.guitar_shop.service.GuitarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class GuitarController {
 
         if(returnedGuitar.equals(null)) {
 
-            throw new RuntimeException("the guitar does not exist");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
         }
 
