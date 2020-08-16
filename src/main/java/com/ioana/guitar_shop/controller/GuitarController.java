@@ -27,7 +27,15 @@ public class GuitarController {
     @ResponseBody
     public Guitar getGuitarById(@PathVariable("serialNumber") String serialNumber) {
 
-        return guitarService.getGuitarById(serialNumber);
+        Guitar returnedGuitar =  guitarService.getGuitarById(serialNumber);
+
+        if(returnedGuitar.equals(null)) {
+
+            throw new RuntimeException("the guitar does not exist");
+
+        }
+
+        return returnedGuitar;
     }
 
 //    @GetMapping("/error")
